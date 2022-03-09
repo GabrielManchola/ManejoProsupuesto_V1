@@ -24,6 +24,7 @@ namespace ManejoPresupuesto.Servicios
             using var connection = new SqlConnection(connectionString);
             var id = await connection.QuerySingleAsync<int>("Transacciones_insertar", new {transaccion.UsuarioId, transaccion.FechaTransaccion,
                 transaccion.Monto,
+                transaccion.CategoriaId,
                 transaccion.CuentaId,
                 transaccion.Nota
             }, commandType: System.Data.CommandType.StoredProcedure);
