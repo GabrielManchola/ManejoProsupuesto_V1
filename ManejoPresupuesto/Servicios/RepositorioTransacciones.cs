@@ -12,6 +12,7 @@ namespace ManejoPresupuesto.Servicios
         Task CrearTransaccion(Transaccion transaccion);
         Task<IEnumerable<Transaccion>> ObtenerPorCuentaId(ObtenerTransaccionesPorCuenta modelo);
         Task<Transaccion> ObtenerPorId(int id, int usuarioId);
+        Task<IEnumerable<ResultadoObtenerPorSemana>> ObtenerPorSemana(ParametroObtenerTransaccionesPorusuario modelo);
         Task<IEnumerable<Transaccion>> ObtenerPorUsuarioId(ParametroObtenerTransaccionesPorusuario modelo);
     }
     public class RepositorioTransacciones: IRepositorioTransacciones
@@ -94,6 +95,18 @@ namespace ManejoPresupuesto.Servicios
 
 
         }
+
+        public async Task<IEnumerable<ResultadoObtenerPorSemana>> ObtenerPorSemana(ParametroObtenerTransaccionesPorusuario modelo)
+        {
+            using var connection = new SqlConnection(connectionString);
+            return await connection.QueryAsync<ResultadoObtenerPorSemana>(@"Select DATEDIFF(d, @fechaInicio, FechaTransaccion) / 7 + 1 as Semana, sum(Monto) as Monto, C.TipoOperacionId as Operacion
+                                                                              from Transacciones T
+                                                                              Inner join Categorias C
+                                                                              ON C.Id = T.CategoriaId
+                                                                              Where T.UsuarioId = @usuarioId and FechaTransaccion between @fechaInicio and @fechaFin
+                                                                              group by DATEDIFF(d, @fechaInicio, FechaTransaccion) / 7 + 1, C.TipoOperacionId", modelo);
+        }
+
 
 
     }

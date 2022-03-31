@@ -37,6 +37,32 @@ namespace ManejoPresupuesto.Controllers
             return View(modelo);  
         }
 
+        public async Task<IActionResult> Semanal(int mes, int año)
+        {
+            var usuarioId = servicioUsuarios.ObtenerusuarioId();
+
+            IEnumerable<ResultadoObtenerPorSemana> transaccionesPorSemana = await servicioReportes.ObtenerReporteSemanal(usuarioId,mes,año,ViewBag);   
+
+
+            return View();
+        }
+
+        public IActionResult Mensual()
+        {
+            return View();
+        }
+        public IActionResult ReporteExcel()
+        {
+            return View();
+        }
+        public IActionResult Calendario()
+        {
+            return View();
+        }
+
+
+
+
         public async Task<IActionResult> Crear()
         {
             var usuarioId = servicioUsuarios.ObtenerusuarioId();
