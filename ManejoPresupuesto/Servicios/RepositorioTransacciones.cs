@@ -99,7 +99,7 @@ namespace ManejoPresupuesto.Servicios
         public async Task<IEnumerable<ResultadoObtenerPorSemana>> ObtenerPorSemana(ParametroObtenerTransaccionesPorusuario modelo)
         {
             using var connection = new SqlConnection(connectionString);
-            return await connection.QueryAsync<ResultadoObtenerPorSemana>(@"Select DATEDIFF(d, @fechaInicio, FechaTransaccion) / 7 + 1 as Semana, sum(Monto) as Monto, C.TipoOperacionId as Operacion
+            return await connection.QueryAsync<ResultadoObtenerPorSemana>(@"Select DATEDIFF(d, @fechaInicio, FechaTransaccion) / 7 + 1 as Semana, sum(Monto) as Monto, C.TipoOperacionId as TipoOperacionId
                                                                               from Transacciones T
                                                                               Inner join Categorias C
                                                                               ON C.Id = T.CategoriaId
