@@ -12,6 +12,7 @@ namespace ManejoPresupuesto.Servicios
         Task CrearTransaccion(Transaccion transaccion);
         Task<IEnumerable<Transaccion>> ObtenerPorCuentaId(ObtenerTransaccionesPorCuenta modelo);
         Task<Transaccion> ObtenerPorId(int id, int usuarioId);
+        Task<IEnumerable<ResultadoObtenerPorMes>> ObtenerPorMes(int usuarioId, int año);
         Task<IEnumerable<ResultadoObtenerPorSemana>> ObtenerPorSemana(ParametroObtenerTransaccionesPorusuario modelo);
         Task<IEnumerable<Transaccion>> ObtenerPorUsuarioId(ParametroObtenerTransaccionesPorusuario modelo);
     }
@@ -105,6 +106,20 @@ namespace ManejoPresupuesto.Servicios
                                                                               ON C.Id = T.CategoriaId
                                                                               Where T.UsuarioId = @usuarioId and FechaTransaccion between @fechaInicio and @fechaFin
                                                                               group by DATEDIFF(d, @fechaInicio, FechaTransaccion) / 7 + 1, C.TipoOperacionId", modelo);
+        }
+
+        public async Task<IEnumerable<ResultadoObtenerPorMes>> ObtenerPorMes(int usuarioId, int año)
+        {
+            using var connection = new SqlConnection(connectionString);
+            return await connection.QueryAsync<ResultadoObtenerPorMes>(@"select MONTH(FechaTransaccion) as Mes, SUM(Monto) as Monto, c.TipoOperacionId as TipoOperacionId
+                                                                        from Transacciones T
+                                                                        inner join Categorias C
+                                                                        ON c.Id = t.CategoriaId
+                                                                        where T.UsuarioId = @usuarioId and YEAR(FechaTransaccion) = @año
+                                                                        group by MONTH(FechaTransaccion), c.TipoOperacionId", new {usuarioId, año});
+
+
+
         }
 
 
