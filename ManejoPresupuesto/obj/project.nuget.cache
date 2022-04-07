@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "38FuYhMn10IAbVpYK5XLKT6kAjECtfpqMn4qT73Id2jENogZ0V2zX2hxqmUzpM0GIEuw0D22ci4cQlA7S0kqcw==",
+  "dgSpecHash": "25p3RCXxgRB+EaqE9wEK5VGhFSMHF7u3BFfJBpDDKyl1hw6IhdCOJszsHw782aHymvEV8IN7zLhOk/6yknNwow==",
   "success": true,
   "projectFilePath": "C:\\Users\\gape4\\source\\repos\\ManejoPresupuesto\\ManejoPresupuesto\\ManejoPresupuesto.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,8 @@
     "C:\\Users\\gape4\\.nuget\\packages\\azure.core\\1.6.0\\azure.core.1.6.0.nupkg.sha512",
     "C:\\Users\\gape4\\.nuget\\packages\\azure.identity\\1.3.0\\azure.identity.1.3.0.nupkg.sha512",
     "C:\\Users\\gape4\\.nuget\\packages\\closedxml\\0.95.4\\closedxml.0.95.4.nupkg.sha512",
+    "C:\\Users\\gape4\\.nuget\\packages\\colorcode.core\\2.0.13\\colorcode.core.2.0.13.nupkg.sha512",
+    "C:\\Users\\gape4\\.nuget\\packages\\colorcode.html\\2.0.13\\colorcode.html.2.0.13.nupkg.sha512",
     "C:\\Users\\gape4\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\gape4\\.nuget\\packages\\documentformat.openxml\\2.7.2\\documentformat.openxml.2.7.2.nupkg.sha512",
     "C:\\Users\\gape4\\.nuget\\packages\\excelnumberformat\\1.0.10\\excelnumberformat.1.0.10.nupkg.sha512",
