@@ -155,7 +155,7 @@ namespace ManejoPresupuesto.Controllers
         {
             return View();
         }
-
+        //reportes de excel
         [HttpGet]
         public async Task<FileResult> ExportarExcelPorMes(int mes, int año)
         {
@@ -175,6 +175,47 @@ namespace ManejoPresupuesto.Controllers
             return GenerarExcel(nombreArchivo, transacciones);
 
         }
+
+        [HttpGet]
+        public async Task<FileResult> ExportarExcelPoraño(int año)
+        {
+            var fechaInicio = new DateTime(año, 1, 1);
+            var fechaFin = fechaInicio.AddYears(1).AddDays(-1);
+            var usuarioId = servicioUsuarios.ObtenerusuarioId();
+
+            var transacciones = await repositorioTransacciones.ObtenerPorUsuarioId(new ParametroObtenerTransaccionesPorusuario
+            {
+                UsuarioId = usuarioId,
+                FechaInicio = fechaInicio,
+                FechaFin = fechaFin
+            });
+
+            var nombreArchivo = $"Manejo presupuesto- {fechaInicio.ToString("yyyy")}.xlsx";
+
+            return GenerarExcel(nombreArchivo, transacciones);
+
+        }
+
+        [HttpGet]
+        public async Task<FileResult> ExportarExcelConTodo()
+        {
+            var fechaInicio = DateTime.Today.AddYears(-100);
+            var fechaFin = DateTime.Today.AddYears(1000);
+            var usuarioId = servicioUsuarios.ObtenerusuarioId();
+
+            var transacciones = await repositorioTransacciones.ObtenerPorUsuarioId(new ParametroObtenerTransaccionesPorusuario
+            {
+                UsuarioId = usuarioId,
+                FechaInicio = fechaInicio,
+                FechaFin = fechaFin
+            });
+
+            var nombreArchivo = $"Manejo presupuesto- {DateTime.Today.ToString("dd-MM-yyy")}.xlsx";
+
+            return GenerarExcel(nombreArchivo, transacciones);
+
+        }
+    
 
         private FileResult GenerarExcel(string nombreArchivo, IEnumerable<Transaccion> transacciones)
         {
@@ -218,6 +259,8 @@ namespace ManejoPresupuesto.Controllers
             }
 
         }
+
+        //fin reportes de excel
 
         public IActionResult Calendario()
         {
