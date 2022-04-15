@@ -63,3 +63,6 @@ C:\Users\gape4\source\repos\ManejoPresupuesto\ManejoPresupuesto\obj\Debug\net6.0
 C:\Users\gape4\source\repos\ManejoPresupuesto\ManejoPresupuesto\obj\Debug\net6.0\ref\ManejoPresupuesto.dll
 C:\Users\gape4\source\repos\ManejoPresupuesto\ManejoPresupuesto\obj\Debug\net6.0\ManejoPresupuesto.pdb
 C:\Users\gape4\source\repos\ManejoPresupuesto\ManejoPresupuesto\obj\Debug\net6.0\ManejoPresupuesto.genruntimeconfig.cache
+C:\Users\gape4\source\repos\ManejoPresupuesto\ManejoPresupuesto\bin\Debug\net6.0\ColorCode.Core.dll
+C:\Users\gape4\source\repos\ManejoPresupuesto\ManejoPresupuesto\bin\Debug\net6.0\ColorCode.HTML.dll
+C:\Users\gape4\source\repos\ManejoPresupuesto\ManejoPresupuesto\obj\Debug\net6.0\ManejoPresupuesto.csproj.AssemblyReference.cache

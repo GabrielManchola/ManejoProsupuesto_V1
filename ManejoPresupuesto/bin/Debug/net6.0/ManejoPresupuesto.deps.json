@@ -10,6 +10,7 @@
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "11.0.0",
           "ClosedXML": "0.95.4",
+          "ColorCode.HTML": "2.0.13",
           "Dapper": "2.0.123",
           "Microsoft.Data.SqlClient": "4.1.0"
         },
@@ -85,6 +86,29 @@
           "lib/netstandard2.0/ClosedXML.dll": {
             "assemblyVersion": "0.95.4.0",
             "fileVersion": "0.95.4.0"
+          }
+        }
+      },
+      "ColorCode.Core/2.0.13": {
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "runtime": {
+          "lib/netstandard1.4/ColorCode.Core.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.13.41"
+          }
+        }
+      },
+      "ColorCode.HTML/2.0.13": {
+        "dependencies": {
+          "ColorCode.Core": "2.0.13",
+          "NETStandard.Library": "1.6.1"
+        },
+        "runtime": {
+          "lib/netstandard1.4/ColorCode.HTML.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.13.41"
           }
         }
       },
@@ -1133,6 +1157,20 @@
       "sha512": "sha512-YixFPzUJ4Ni2AaW/FbPgzFvdtjIzE/4NKROwI1RqIQHWka7QN9Spt4sHuXaSk9PLmXBkk8newHGW0UWLcLs5GA==",
       "path": "closedxml/0.95.4",
       "hashPath": "closedxml.0.95.4.nupkg.sha512"
+    },
+    "ColorCode.Core/2.0.13": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-v0xqipj/6h2TpIKSrOCZpXMmOGvLsyO2prWBXY6t+lduexDSimqKIZXTTZkpq/vG2kNxB8K8nzyrkIB3usoN7A==",
+      "path": "colorcode.core/2.0.13",
+      "hashPath": "colorcode.core.2.0.13.nupkg.sha512"
+    },
+    "ColorCode.HTML/2.0.13": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OykdbXqEl/vouwR6AAYP1Or2y3TxjxzAt4kFkwIvNYoJn7pADxRDEQJQhRP8FVaBL+iP7OCbW8LnF2vpHHjBjw==",
+      "path": "colorcode.html/2.0.13",
+      "hashPath": "colorcode.html.2.0.13.nupkg.sha512"
     },
     "Dapper/2.0.123": {
       "type": "package",
