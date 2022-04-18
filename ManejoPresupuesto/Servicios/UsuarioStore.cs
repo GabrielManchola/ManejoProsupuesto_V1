@@ -24,9 +24,10 @@ namespace ManejoPresupuesto.Servicios
             throw new NotImplementedException();
         }
 
+        //este s e quita si no se usa 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            
         }
 
         public async Task<Usuario> FindByEmailAsync(string normalizedEmail, CancellationToken cancellationToken)
