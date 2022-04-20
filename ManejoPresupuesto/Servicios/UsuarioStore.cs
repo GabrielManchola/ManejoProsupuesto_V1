@@ -40,9 +40,9 @@ namespace ManejoPresupuesto.Servicios
             throw new NotImplementedException();
         }
 
-        public async Task<Usuario> FindByNameAsync(string normalizedUserName, CancellationToken cancellationToken)
+        public async Task<Usuario> FindByNameAsync(string normalizedEmail, CancellationToken cancellationToken)
         {
-            return await repositorioUsuarios.BuscarPorEmail(normalizedUserName);
+            return await repositorioUsuarios.BuscarPorEmail(normalizedEmail);
         }
 
         public Task<string> GetEmailAsync(Usuario user, CancellationToken cancellationToken)
@@ -72,7 +72,7 @@ namespace ManejoPresupuesto.Servicios
 
         public Task<string> GetUserIdAsync(Usuario user, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.EmailNormalizado);
         }
 
         public Task<string> GetUserNameAsync(Usuario user, CancellationToken cancellationToken)
