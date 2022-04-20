@@ -62,7 +62,7 @@ namespace ManejoPresupuesto.Servicios
 
         public Task<string> GetNormalizedUserNameAsync(Usuario user, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(user.Email);
         }
 
         public Task<string> GetPasswordHashAsync(Usuario user, CancellationToken cancellationToken)
@@ -114,7 +114,8 @@ namespace ManejoPresupuesto.Servicios
 
         public Task SetUserNameAsync(Usuario user, string userName, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            userName = user.Email;
+            return Task.FromResult(userName);
         }
 
         public Task<IdentityResult> UpdateAsync(Usuario user, CancellationToken cancellationToken)
