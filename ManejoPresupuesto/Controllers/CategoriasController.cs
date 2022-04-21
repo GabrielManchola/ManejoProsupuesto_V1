@@ -1,9 +1,11 @@
 ﻿using ManejoPresupuesto.Models;
 using ManejoPresupuesto.Servicios;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ManejoPresupuesto.Controllers
 {
+    //[Authorize] se usa para definir que todo lo que este dentro de esta clase tiene que ser mediante un usuario autenticado
     public class CategoriasController:Controller
     {
         private readonly IRepositorioCategorias repositorioCategorias;

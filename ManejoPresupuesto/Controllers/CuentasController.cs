@@ -1,11 +1,13 @@
 ﻿using AutoMapper;
 using ManejoPresupuesto.Models;
 using ManejoPresupuesto.Servicios;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace ManejoPresupuesto.Controllers
 {
+    //[Authorize] se usa para definir que todo lo que este dentro de esta clase tiene que ser mediante un usuario autenticado
     public class CuentasController:Controller
     {
         private readonly IRepositorioTiposCuentas repositorioTiposCuentas;
@@ -15,6 +17,7 @@ namespace ManejoPresupuesto.Controllers
         private readonly IRepositorioTransacciones repositorioTransacciones;
         private readonly IServicioReportes servicioReportes;
 
+        
         public CuentasController(IRepositorioTiposCuentas repositorioTiposCuentas, IServicioUsuarios servicioUsuarios, 
                                  IRepositorioCuentas repositorioCuentas, IMapper mapper, IRepositorioTransacciones repositorioTransacciones,
                                  IServicioReportes servicioReportes)
@@ -27,6 +30,7 @@ namespace ManejoPresupuesto.Controllers
             this.servicioReportes = servicioReportes;
         }
 
+        
         public async Task<IActionResult> Index()
         {
             var usuarioId = servicioUsuarios.ObtenerusuarioId();

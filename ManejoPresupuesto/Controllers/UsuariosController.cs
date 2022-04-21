@@ -1,7 +1,9 @@
 ﻿using ManejoPresupuesto.Models;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace ManejoPresupuesto.Controllers
 {
@@ -17,12 +19,13 @@ namespace ManejoPresupuesto.Controllers
         }
 
       
-
+        [AllowAnonymous]
         public IActionResult Registro()
         {
             return View();  
         }
 
+        [AllowAnonymous]
         [HttpPost]
         public async Task<IActionResult> Registro(RegistroViewModel modelo)
         {
@@ -51,12 +54,29 @@ namespace ManejoPresupuesto.Controllers
             }   
         }
 
+        [AllowAnonymous]
         [HttpGet]
         public IActionResult Login()
         {
+            /*
+            if (User.Identity.IsAuthenticated)
+            {
+                //esto solo se ejecutara cuando el usuario este autenticado
+                //codigo siguiente es un ejemplo para sacar el id del usuario 
+                var claims = User.Claims.ToList();
+                var usuarioIdReal = claims.Where(x => x.Type == ClaimTypes.NameIdentifier).FirstOrDefault();
+                var id = usuarioIdReal.Value;
+            }
+            else
+            {
+                //signInManager el usuario no esta autenticado 
+            }
+            */
+
             return View();
         }
 
+        [AllowAnonymous]
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel modelo)
         {
@@ -66,8 +86,6 @@ namespace ManejoPresupuesto.Controllers
             }
 
             
-
-
             var resultado = await signInManager.PasswordSignInAsync(modelo.Email, modelo.Password, modelo.Recuerdame, lockoutOnFailure: false);
            
             
