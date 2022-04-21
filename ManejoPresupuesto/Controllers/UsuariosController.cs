@@ -65,7 +65,7 @@ namespace ManejoPresupuesto.Controllers
                 return View(modelo);
             }
 
-            var user = userManager.FindByEmailAsync(modelo.Email);
+            
 
 
             var resultado = await signInManager.PasswordSignInAsync(modelo.Email, modelo.Password, modelo.Recuerdame, lockoutOnFailure: false);
