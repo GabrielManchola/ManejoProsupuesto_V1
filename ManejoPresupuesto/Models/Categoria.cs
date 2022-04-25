@@ -13,7 +13,7 @@ namespace ManejoPresupuesto.Models
         [StringLength(maximumLength:50, ErrorMessage ="NO puede ser mayor a {1} caracteres")]
         public string Nombre { get; set; }
 
-        [Display(Name ="Tipo Operacion")]
+        [Display(Name ="Tipo Operación")]
         public TipoOperacion TipoOperacionId { get; set; }
 
         public int UsuarioId { get; set; }

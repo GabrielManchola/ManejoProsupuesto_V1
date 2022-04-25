@@ -6,7 +6,7 @@
 
 
 <h1>Crear cuenta</h1>
-<h5>La cuenta hace referencia a los distintos balances que se tienen: Sean tarjetas de credito, cuenta de ahorros, prestamos, etc.</h5>
+<h5>La cuenta hace referencia a los distintos balances que se tienen: Sean tarjetas de crédito, cuenta de ahorros, préstamos, etc.</h5>
 
 <form asp-action="Crear">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -30,7 +30,7 @@
     </div>
 
     <div class="mb-3">
-        <label asp-for="Descripcion" class="form-label"></label>
+        <label asp-for="Descripcion" class="form-label">Descripción</label>
         <textarea asp-for="Descripcion" class="form-control"></textarea>
         <span asp-validation-for="Descripcion" class="text-danger"></span>
     </div>
