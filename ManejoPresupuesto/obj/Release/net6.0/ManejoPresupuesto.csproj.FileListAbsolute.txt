@@ -60,3 +60,9 @@ C:\Users\gape4\source\repos\ManejoPresupuesto\ManejoPresupuesto\obj\Release\net6
 C:\Users\gape4\source\repos\ManejoPresupuesto\ManejoPresupuesto\obj\Release\net6.0\ref\ManejoPresupuesto.dll
 C:\Users\gape4\source\repos\ManejoPresupuesto\ManejoPresupuesto\obj\Release\net6.0\ManejoPresupuesto.pdb
 C:\Users\gape4\source\repos\ManejoPresupuesto\ManejoPresupuesto\obj\Release\net6.0\ManejoPresupuesto.genruntimeconfig.cache
+C:\Users\gape4\source\repos\ManejoPresupuesto\ManejoPresupuesto\bin\Release\net6.0\ClosedXML.dll
+C:\Users\gape4\source\repos\ManejoPresupuesto\ManejoPresupuesto\bin\Release\net6.0\ColorCode.Core.dll
+C:\Users\gape4\source\repos\ManejoPresupuesto\ManejoPresupuesto\bin\Release\net6.0\ColorCode.HTML.dll
+C:\Users\gape4\source\repos\ManejoPresupuesto\ManejoPresupuesto\bin\Release\net6.0\DocumentFormat.OpenXml.dll
+C:\Users\gape4\source\repos\ManejoPresupuesto\ManejoPresupuesto\bin\Release\net6.0\ExcelNumberFormat.dll
+C:\Users\gape4\source\repos\ManejoPresupuesto\ManejoPresupuesto\bin\Release\net6.0\System.IO.Packaging.dll
